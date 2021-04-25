@@ -1,0 +1,126 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Quattrocento+Sans&display=swap" rel="stylesheet"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e24dd80d8b.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+
+  <script src="script.js"></script>
+
+  <style>
+    #first-row {
+      background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background.jpg');
+      background-repeat: no-repeat;
+      background-size:cover;
+      height: 100vh;
+      padding-top: 10px;
+    }
+
+    .header-text {
+      color: #fff;
+      text-align: center;
+    }
+
+    .row-text {
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    body {
+      color: #fff;
+    }
+    .headerTextStyle{
+        font-family: 'Comfortaa', cursive;
+        letter-spacing: 0.9px;
+    }
+    .bodyTextStyle{
+        font-family: 'Quattrocento Sans', sans-serif;
+        letter-spacing: 0.5px;
+    }
+  </style>
+  <title>USD Converter</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="first-row" class="row">
+      <div class="offset-0 col-md-10 offset-md-1 col-sm-12 col-xs-12">
+        <h4 class = "text-center text-light headerTextStyle"> USD Converter
+        <i class="fas fa-money-bill"></i></h4>
+        <div class="card" style="background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); margin-top: 20px;">
+          <div class="card-body bodyTextStyle">
+            <div style="padding-top: 5px; padding-bottom: 5px">
+              <b class="text-dark">Select Currencies</b>
+
+              <div class="input-group mb-3 mt-3 body">
+                <select class="form-control custom-select" id="currencyFrom">
+                    <option selected value="USD">America - USD</option>
+                  </select>
+  
+                  <select class="form-control custom-select" id="currencyTo">
+                    <option selected value="">Choose a Currency</option>
+                    <option value="USD">America - USD</option>
+                    <option value="AUD">Australia - AUD</option>
+                    <option value="CAD">Canada - CAD</option>
+                    <option value="PLN">Poland - PLN</option>
+                    <option value="MXN">Mexico - MXN</option>
+                  </select> <br/>
+            </div>
+            <div class="form-group bodyTextStyle">
+                <b class="text-dark">Amount</b>
+                <input type ="text" class = "form-control" id = "usdRate" maxlength="20" placeholder="Input valid number (max 20 digits)">
+              </div>
+              <div class="input-group-append">
+                <button class="btn btn-dark type="button" id="add-entry" onclick="generateTotal()">
+                  <span class="d-none d-sm-inline">Submit</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br/>
+        <div class="card bodyTextStyle" style="background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);   margin-bottom: 20px;">
+          <div class="card-body">
+            <div style="padding-top: 5px; padding-bottom: 5px">
+              <div class="table-responsive">
+                <table class="table table-bordered text-dark text-center">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">1 USD Rate</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Total Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-body">
+                    <tr>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
